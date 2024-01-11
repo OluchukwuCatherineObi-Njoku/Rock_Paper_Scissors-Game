@@ -21,16 +21,21 @@ def determine_winner(user_choice, computer_choice):
         return "Computer wins!"
 
 def play_game():
-    print("Welcome to Rock, Paper, Scissors!")
-    
-    user_choice = get_user_choice()
-    computer_choice = get_computer_choice()
-    
-    print(f"You chose {user_choice}.")
-    print(f"Computer chose {computer_choice}.")
-    
-    result = determine_winner(user_choice, computer_choice)
-    print(result)
+    while True:
+        print("\nWelcome to Rock, Paper, Scissors!\n")
+
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+
+        print(f"\nYou chose {user_choice}.")
+        print(f"Computer chose {computer_choice}.")
+
+        result = determine_winner(user_choice, computer_choice)
+        print(result)
+
+        play_again = input("\nDo you want to play again? (yes/no): ").lower()
+        if play_again != 'yes':
+            break
 
 if __name__ == "__main__":
     play_game()
